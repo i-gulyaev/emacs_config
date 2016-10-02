@@ -28,7 +28,7 @@
 (global-linum-mode 1)
 
 ;; use y/n instead of yes/no
-(fset 'yes-or-no-p 'y-or-n-p)
+(fset 'yes-or-no-p #'y-or-n-p)
 
 ;; Fix for delete key "problem"
 (normal-erase-is-backspace-mode 1)
@@ -41,8 +41,9 @@
 
 (setq use-package-always-ensure t)
 
-;; (use-package uniquify
-;;   :config (setq uniquify-buffer-name-style 'forward))
+(use-package uniquify
+  :ensure nil
+  :init (setq uniquify-buffer-name-style 'forward))
 
 (use-package ido
   :init
@@ -88,7 +89,7 @@
 
 (use-package markdown-mode)
 
-(use-package prog-mode
-  :load-path "lisp/"
-  :ensure nil)
+;; various settings for programming
+(load-file "~/.emacs.d/lisp/prog-mode.el")
+
 

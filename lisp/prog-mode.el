@@ -1,3 +1,5 @@
+
+
 (c-add-style "my-style"
              '("stroustrup"
                (indent-tabs-mode . nil)
@@ -32,14 +34,12 @@
                 ("\\.py3" . python-mode))
               auto-mode-alist))
 
-
+;;;###autoload
 (defun cpp-check ()
  "Run cpp-check on current file the buffer is visiting."
  (interactive)
  (let (compile-command)
    (compile
     (concat "cppcheck --enable=all --template='{file}:{line}: {severity}: {message}' " (buffer-file-name)))))
-
-;;(global-set-key [f9] 'cpp-check)
 
 (provide 'prog-mode)
