@@ -1,4 +1,15 @@
+;;
+;; Some common settings for programming modes
+;;
+;;
 
+;;(require 'ess-site)
+
+
+;; guesses indentation style in existing file
+;; and adjusts current indentation settings 
+;; (add-to-list 'load-path "~/.emacs.d/plugins/dtrt-indent")
+;; (require 'dtrt-indent)
 
 (c-add-style "my-style"
              '("stroustrup"
@@ -9,6 +20,7 @@
 (defun my-c++-mode-hook ()
   (c-set-style "my-style")
   (setq show-trailing-whitespaces t)
+;;  (setq dtrt-indent-mode t)
   (subword-mode))
 
 (add-hook 'c-mode-common-hook 'my-c++-mode-hook)
@@ -34,7 +46,7 @@
                 ("\\.py3" . python-mode))
               auto-mode-alist))
 
-;;;###autoload
+
 (defun cpp-check ()
  "Run cpp-check on current file the buffer is visiting."
  (interactive)
@@ -42,4 +54,10 @@
    (compile
     (concat "cppcheck --enable=all --template='{file}:{line}: {severity}: {message}' " (buffer-file-name)))))
 
-(provide 'prog-mode)
+(global-set-key [f9] 'cpp-check)
+
+
+
+(provide 'setup-prog-mode)
+
+
