@@ -12,12 +12,19 @@
 
 
 (custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(case-fold-search t)
  '(column-number-mode t)
  '(display-time-mode t)
  '(font-use-system-font t)
  '(global-font-lock-mode t)
  '(menu-bar-mode nil)
+ '(package-selected-packages
+   (quote
+    (php-mode yasnippet xcscope use-package markdown-mode dropdown-list dired-details+ color-theme)))
  '(scalable-fonts-allowed t)
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
@@ -38,6 +45,8 @@
 
 ;;disable autosaving
 (auto-save-mode nil)
+
+(setq-default truncate-lines 300)
 
 (setq use-package-always-ensure t)
 
@@ -89,7 +98,9 @@
 
 (use-package markdown-mode)
 
+(use-package php-mode)
+
 ;; various settings for programming
 (load-file "~/.emacs.d/lisp/setup-prog-mode.el")
-
+(load-file "~/.emacs.d/lisp/ack.el")
 
