@@ -90,6 +90,6 @@
 (use-package markdown-mode)
 
 ;; various settings for programming
-(load-file "~/.emacs.d/lisp/prog-mode.el")
+(load-file "~/.emacs.d/lisp/setup-prog-mode.el")
 
 
