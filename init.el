@@ -48,6 +48,8 @@
 
 (setq-default truncate-lines 300)
 
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
 (setq use-package-always-ensure t)
 
 (use-package uniquify
