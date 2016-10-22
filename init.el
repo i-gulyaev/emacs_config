@@ -86,7 +86,9 @@
 
 
 (use-package xcscope
-  :init (setq cscope-do-not-update-database t)
+  :init
+  (cscope-setup)
+  (setq cscope-do-not-update-database t)
   :bind (("C-c d" . cscope-find-this-symbol)
 	 ("C-c g" . cscope-find-global-definition)
 	 ("C-c r" . cscope-find-functions-calling-this-function)
