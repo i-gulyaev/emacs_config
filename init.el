@@ -1,7 +1,5 @@
 (require 'package)
 (setq package-enable-at-startup nil)
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
 
 (package-initialize)
 
@@ -24,7 +22,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (php-mode yasnippet xcscope use-package markdown-mode dropdown-list dired-details+ color-theme)))
+    (dropdown-list dired-details+ php-mode yasnippet use-package markdown-mode)))
  '(scalable-fonts-allowed t)
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
@@ -64,38 +62,15 @@
   (ido-mode)
   :bind ("C-x C-d" . ido-dired))
 
-(use-package color-theme
-  :init
-  (color-theme-initialize)
-  (color-theme-bharadwaj))
-
-(use-package dired-details+
-  :init
-  (setq dired-details-hidden-string ""))
-
 (use-package midnight)
 
 (use-package yasnippet
-  :config (use-package dropdown-list)
   :init
   (setq yas/prompt-functions
 	'(yas/dropdown-prompt
 	  yas/ido-prompt
 	  yas/completing-prompt))
   (yas-global-mode))
-
-
-(use-package xcscope
-  :init
-  (cscope-setup)
-  (setq cscope-do-not-update-database t)
-  :bind (("C-c d" . cscope-find-this-symbol)
-	 ("C-c g" . cscope-find-global-definition)
-	 ("C-c r" . cscope-find-functions-calling-this-function)
-	 ("C-c v" . cscope-find-called-functions)
-	 ("C-c f" . cscope-find-this-file)
-	 ("C-c i" . cscope-find-files-including-file)
-	 ("C-c x" . cscope-find-this-text-string)))
 
 (use-package ess-site
   :disabled t
@@ -111,3 +86,11 @@
 (load-file "~/.emacs.d/lisp/setup-prog-mode.el")
 (load-file "~/.emacs.d/lisp/ack.el")
 
+(load-theme 'wombat)
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
