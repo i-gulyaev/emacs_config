@@ -1,5 +1,7 @@
 (require 'package)
 (setq package-enable-at-startup nil)
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
 (package-initialize)
 
@@ -22,7 +24,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (dropdown-list dired-details+ php-mode yasnippet use-package markdown-mode)))
+    (yasnippet-snippets dropdown-list dired-details+ php-mode yasnippet use-package markdown-mode)))
  '(scalable-fonts-allowed t)
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
