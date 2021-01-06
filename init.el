@@ -39,7 +39,7 @@
 ;; Fix for delete key "problem"
 (normal-erase-is-backspace-mode 1)
 
-;; Spaces instead of tabs 
+;; Spaces instead of tabs
 (setq-default indent-tabs-mode nil)
 
 ;;disable autosaving
@@ -57,8 +57,8 @@
 
 (use-package ido
   :init
-  (add-hook 'ido-setup-hook 
-	    (lambda () 
+  (add-hook 'ido-setup-hook
+	    (lambda ()
 	      (define-key ido-completion-map [tab] 'ido-complete)))
   (ido-mode)
   :bind ("C-x C-d" . ido-dired))
